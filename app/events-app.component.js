@@ -9,17 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var EventsAppComponent = (function () {
-    function EventsAppComponent() {
+var EventsComponent = (function () {
+    function EventsComponent() {
     }
-    return EventsAppComponent;
+    return EventsComponent;
 }());
-EventsAppComponent = __decorate([
+EventsComponent = __decorate([
     core_1.Component({
         selector: 'events-app',
-        template: "\n    <nav-bar></nav-bar>\n    <events-list></events-list>"
+        template: "\n    <nav-bar></nav-bar>\n    <router-outlet></router-outlet>\n    "
     }),
     __metadata("design:paramtypes", [])
-], EventsAppComponent);
-exports.EventsAppComponent = EventsAppComponent;
+], EventsComponent);
+exports.EventsComponent = EventsComponent;
 //# sourceMappingURL=events-app.component.js.map

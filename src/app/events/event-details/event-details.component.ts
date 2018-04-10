@@ -14,12 +14,26 @@ import {IEvent} from "../shared/event.model";
 })
 
 export class EventDetailsComponent implements OnInit{
-    event:IEvent
+    event:IEvent;
+    addMode:boolean;
     constructor(private eventService:EventService, private activatedRoute:ActivatedRoute){
         
     }
     ngOnInit(){
         this.event = this.eventService.getEvent(+this.activatedRoute.snapshot.params['id']);
+    }
+    addSession(){
+        this.addMode = true;
+    }
+    saveSession(session){
+        const nextId = Math.max.apply(null, this.event.sessions.map(x => x.id));
+        session.id= nextId+1;
+        this.event.sessions.push(session);
+        this.eventService.updateEvent(this.event);
+        this.addMode = false;
+    }
+    cancelAddSession(){
+        this.addMode = false;
     }
     
 }

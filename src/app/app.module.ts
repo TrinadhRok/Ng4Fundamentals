@@ -5,7 +5,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 import {NavBarComponent} from './nav/navbar.component';
 import {Error404Component} from './errors/404.component';
-import {ToastrService} from './common/toastr.service';
+import {TOASTR_TOKEN, Toastr} from './common/toastr.service';
 import {CollapsibleWellComponent} from './common/collapsible-well.component';
 import {routes} from './routes';
 
@@ -25,7 +25,7 @@ import {
     DurationPipe,
     EditEventComponent} from "./events/index"
 
-
+    declare let toastr:Toastr;
 
 @NgModule({
     imports:[
@@ -51,7 +51,7 @@ import {
     bootstrap:[EventsAppComponent],
     providers:[
         EventService,
-        ToastrService,
+        {provide:TOASTR_TOKEN, useValue:toastr},
         EventRouteActivator,
         {provide:'canDeactivateCreateEvent', useValue: checkDirtyState},
         EventResolveService,

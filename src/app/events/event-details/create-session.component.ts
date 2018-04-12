@@ -18,6 +18,7 @@ import {ISession} from "../shared/event.model";
 })
 
 export class CreateSessionComponent implements OnInit{
+    
     @Output() saveNewSession = new EventEmitter();
     @Output() cancelAddSession = new EventEmitter();
     createSessionForm:FormGroup;

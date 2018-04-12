@@ -9,3 +9,4 @@ export * from "./shared/event.service";
 export * from "./shared/event-route-activator.service";
 export * from "./shared/event-resolve.service";
 export * from "./shared/event.model"
+export * from "./shared/duration.pipe";

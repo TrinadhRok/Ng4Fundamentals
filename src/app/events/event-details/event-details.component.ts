@@ -9,6 +9,7 @@ import {IEvent} from "../shared/event.model";
         `
         .container{padding-left:20px; padding:right:20px;}
         .event-image{height:100px;}
+        a{cursor:pointer;}
         `
     ]
 })
@@ -16,6 +17,8 @@ import {IEvent} from "../shared/event.model";
 export class EventDetailsComponent implements OnInit{
     event:IEvent;
     addMode:boolean;
+    filterBy:string = 'all';
+    sortBy:string='name';
     constructor(private eventService:EventService, private activatedRoute:ActivatedRoute){
         
     }

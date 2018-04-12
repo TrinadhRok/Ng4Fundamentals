@@ -5,4 +5,5 @@ export class ToastrService{
     success(msg:string,title?:string){
         toastr.success(msg);
     }
-}
+} 
+

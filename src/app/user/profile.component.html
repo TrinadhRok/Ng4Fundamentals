@@ -2,7 +2,7 @@
   <h1>Edit Your Profile </h1>
   <hr>
   <div class="col-md-4">
-    <form [formGroup]="profileFormGroup" (ngSubmit)="save(profileFormGroup)" autocomplete="off" novalidate>
+    <form [formGroup]="profileFormGroup" (ngSubmit)="save(profileFormGroup.value)" autocomplete="off" novalidate>
       <div class="form-group" [ngClass]="{'error':isFirstNameValid()}">
         <label for="firstName">First Name:</label>
         <em *ngIf="isFirstNameValid() && profileFormGroup.controls.firstName.errors.required">required*</em>

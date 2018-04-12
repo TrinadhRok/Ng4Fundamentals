@@ -10,7 +10,7 @@ import {CollapsibleWellComponent} from './common/collapsible-well.component';
 import {routes} from './routes';
 
 import {EventsAppComponent} from './events-app.component';
-import {AuthService} from "./user/auth.service"
+import {AuthService} from "./user/auth.service";
 
 import {
     EventsListComponent,
@@ -21,7 +21,9 @@ import {
     SessionListComponent,
     EventService,
     EventRouteActivator,
-    EventResolveService, EditEventComponent} from "./events/index"
+    EventResolveService,
+    DurationPipe,
+    EditEventComponent} from "./events/index"
 
 
 
@@ -43,7 +45,8 @@ import {
         EditEventComponent,
         Error404Component,
         SessionListComponent,
-        CollapsibleWellComponent
+        CollapsibleWellComponent,
+        DurationPipe
     ],
     bootstrap:[EventsAppComponent],
     providers:[

@@ -3,7 +3,7 @@ import {FormGroup, FormControl, Validators} from "@angular/forms";
 import {AuthService} from "./auth.service";
 import {Router} from "@angular/router";
 import {Inject} from '@angular/core';
-import {TOASTR_TOKEN, Toastr} from '../common/toastr.service';
+import {TOASTR_TOKEN, Toastr} from '../common/toastr.api';
 
 @Component({
   templateUrl:'./profile.component.html',

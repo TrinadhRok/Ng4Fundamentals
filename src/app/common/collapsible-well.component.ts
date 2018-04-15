@@ -20,7 +20,6 @@ export class CollapsibleWellComponent{
     @Input() title:string;
     toogleContent(){
         this.visible = !this.visible;
-        console.log("sdfsd");
     }
 }
 

@@ -2,6 +2,7 @@ export * from "./events-list.component";
 export * from "./event-thumbnail.component";
 export * from "./edit-event.component";
 export * from "./create-event.component";
+export * from "./location-validator.directive";
 export * from "./event-details/event-details.component";
 export * from "./event-details/create-session.component";
 export * from "./event-details/session-list.component";

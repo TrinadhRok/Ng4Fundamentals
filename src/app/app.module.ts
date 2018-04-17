@@ -21,6 +21,7 @@ import {
     EventsListComponent,
     EventThumbnailComponent,
     CreateEventComponent,
+    ValidateLocation,
     CreateSessionComponent,
     EditEventComponent,
     EventDetailsComponent,
@@ -57,7 +58,8 @@ let jQuery:Object = window['$'];
         DurationPipe,
         SimpleModalComponent,
         ModalTriggerDirective,
-        UpvoteComponent
+        UpvoteComponent,
+        ValidateLocation
     ],
     bootstrap:[EventsAppComponent],
     providers:[

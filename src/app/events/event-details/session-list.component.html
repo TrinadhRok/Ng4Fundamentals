@@ -1,4 +1,7 @@
 <div class="row" *ngFor="let session of visibleSessions">
+    <div class="col-md-1">
+      <upvote *ngIf="auth.isAuthrenticated()" (vote)="toogleVote(session)" [count]="session.voters.length" [voted]="userHasVoted(session)"></upvote>
+    </div>
     <div class="col-md-10">
       <collapseble-well>
         <div well-title>

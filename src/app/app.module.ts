@@ -22,13 +22,15 @@ import {
     EventThumbnailComponent,
     CreateEventComponent,
     CreateSessionComponent,
+    EditEventComponent,
     EventDetailsComponent,
     SessionListComponent,
     EventService,
     EventRouteActivator,
     EventResolveService,
     DurationPipe,
-    EditEventComponent} from "./events/index"
+    UpvoteComponent,
+    VoterService} from "./events/index"
 
 let toastr:Toastr = window['toastr'];
 let jQuery:Object = window['$'];
@@ -54,7 +56,8 @@ let jQuery:Object = window['$'];
         CollapsibleWellComponent,
         DurationPipe,
         SimpleModalComponent,
-        ModalTriggerDirective
+        ModalTriggerDirective,
+        UpvoteComponent
     ],
     bootstrap:[EventsAppComponent],
     providers:[
@@ -64,7 +67,8 @@ let jQuery:Object = window['$'];
         EventRouteActivator,
         {provide:'canDeactivateCreateEvent', useValue: checkDirtyState},
         EventResolveService,
-        AuthService
+        AuthService,
+        VoterService
     ]
 })
 

@@ -18,8 +18,8 @@ import {TOASTR_TOKEN, Toastr} from '../common/toastr.api';
 })
 export class ProfileComponent implements OnInit {
       profileFormGroup:FormGroup;
-      firstName:FormControl
-      lastName:FormControl
+      private firstName:FormControl
+      private lastName:FormControl
       constructor( private authService:AuthService, private router:Router, @Inject(TOASTR_TOKEN) private toastr:Toastr){
 
       }

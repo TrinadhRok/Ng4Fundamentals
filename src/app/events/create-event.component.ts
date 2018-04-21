@@ -23,8 +23,9 @@ export class CreateEventComponent{
         this.router.navigate(['events']);
     }
     saveEvent(newEventObj){
-        this.eventService.createNewEvent(newEventObj);
-        this.isDirty = false;
-        this.router.navigate(['events']);
+        this.eventService.saveEvent(newEventObj).subscribe(result =>{
+            this.isDirty = false;
+            this.router.navigate(['events']);
+        });
     }
 }

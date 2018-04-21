@@ -26,7 +26,7 @@ export class EditEventComponent{
         sessions:[]
     }
     editSaveEvent(newEventObj){
-        this.eventService.createNewEvent(newEventObj);
+        this.eventService.saveEvent(newEventObj);
         this.router.navigate(['events']);
     }
     cancel(){

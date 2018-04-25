@@ -1,5 +1,6 @@
 <div class="container">
     <img class="event-image" [src]="event?.imageUrl" [alt]="event?.name">
+    {{event?.imageUrl}}
     <div class="row">
       <div class="col-md-11">
         <h2>{{event?.name }} </h2>
@@ -40,5 +41,5 @@
       <div class="col-md-2"><a (click)="addSession()">Add Session</a></div>
     </div>
     <create-session (cancelAddSession)="cancelAddSession()" (saveNewSession)="saveSession($event)" *ngIf="addMode"></create-session>
-    <session-list [sortBy]="sortBy" [filterBy]="filterBy" *ngIf="!addMode" [sessions]="event?.sessions"></session-list>
+    <session-list [eventId]="event?.id" [sortBy]="sortBy" [filterBy]="filterBy" *ngIf="!addMode" [sessions]="event?.sessions"></session-list>
   </div>

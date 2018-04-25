@@ -5,6 +5,7 @@ import {Router} from "@angular/router";
 import {Inject} from '@angular/core';
 import {TOASTR_TOKEN, Toastr} from '../common/toastr.api';
 
+
 @Component({
   templateUrl:'./profile.component.html',
   styles:[`
@@ -39,11 +40,17 @@ export class ProfileComponent implements OnInit {
       }
       save(profileformValues){
         if(this.profileFormGroup.valid){
-          this.authService.updateCurrentuser(profileformValues.firstName, profileformValues.lastName);
-          this.toastr.success("Profile Changes Saved", "Profile");
+          this.authService.updateCurrentuser(profileformValues.firstName, profileformValues.lastName).subscribe(()=>{
+            this.toastr.success("Profile Changes Saved", "Profile");
+          });
         }
       }
       cancel(){
         this.router.navigate(["/events"]);
       }
+      logout(){
+        this.authService.logout().subscribe(resp =>{
+          this.router.navigate(["/user/login"]);
+        });
+      } 
 }

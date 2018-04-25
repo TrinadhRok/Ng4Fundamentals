@@ -2,8 +2,7 @@ import {Component, Input, OnChanges} from "@angular/core";
 import {ISession} from "../shared/event.model";
 import {AuthService} from "../../user/auth.service";
 import {VoterService} from "./voter.service";
-import { Session } from "protractor";
-import { callLifecycleHooksChildrenFirst } from "@angular/core/src/view/provider";
+
 
 @Component({
     selector:'session-list',
@@ -14,6 +13,7 @@ export class SessionListComponent{
     @Input() sessions: ISession[];
     @Input() filterBy:string;
     @Input() sortBy:string;
+    @Input() eventId:number;
     visibleSessions: ISession[];
     constructor(public auth: AuthService, private voterService:VoterService){
 
@@ -28,10 +28,8 @@ export class SessionListComponent{
     filterSessions(){
         if(this.filterBy =='all'){
             this.visibleSessions = this.sessions.slice(0);
-            console.log(this.visibleSessions);
         }else{
             this.visibleSessions = this.sessions.filter(event => event.level.toLowerCase() === this.filterBy);
-            console.log(this.visibleSessions);
         }
     }
     userHasVoted(session){
@@ -39,9 +37,9 @@ export class SessionListComponent{
     }
     toogleVote(session){
        if(this.userHasVoted(session)){
-            this.voterService.deleteVoter(session, this.auth.currentUser.name);
+            this.voterService.deleteVoter( this.eventId, session, this.auth.currentUser.name);
         }else{
-            this.voterService.addVoter(session, this.auth.currentUser.name);
+            this.voterService.addVoter(this.eventId,session, this.auth.currentUser.name);
         } 
     }
 }

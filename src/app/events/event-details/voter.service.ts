@@ -2,6 +2,7 @@ import {Injectable} from "@angular/core";
 import {Observable} from 'rxjs/RX';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import { catchError } from "rxjs/operators";
+import { ISession } from "../shared/event.model";
 
 @Injectable()
 
@@ -22,7 +23,7 @@ export class VoterService{
         .pipe(catchError(this.handleError("add voter")))
         .subscribe();
     }
-    deleteVoter(eventId, session, voterName){
+    deleteVoter(eventId, session:ISession, voterName){
         session.voters = session.voters.filter(voter => voter!==voterName);
         let url =`/api/events/${eventId}/sessions/${session.id}/voters/${voterName}`;
         this.http.delete(url)
